@@ -1,0 +1,59 @@
+路线A大作业交易哈希清单
+
+浏览器：在 https://scan-testnet.potos.hk/ 搜索完整交易哈希。
+以下是本组已保存证据中的交易，供ZBH核对和填写报告，无需再次发送交易。
+
+正式交易表八笔
+
+1. 后端部署 Escrow
+0x28bb13d2b58248efebbd859283b41225d65c1053fc2caf2523612524751a5eea
+区块：2671843
+
+2. 买家 createOrder 订单0
+0x22dd53f353368593dae655057b4e460af66c08e0d87417cc3662c8398b22c04d
+区块：2671947
+
+3. 买家 approve 授权60个代币
+0x6d94607660969e36d1459e0c833420c797cf7fd1fe6e45484a545c1a9888ea1a
+区块：2671958；gasUsed：28423；成功。
+完整哈希由组长复制提供。浏览器Details可能错配方法名称，按本组ABI的approve(address,uint256)及Approval日志解释。
+
+4. 买家 deposit(0) 付款30个代币
+0x9ce54ecc6c0a39456f422b94c11f0c5123bcf17918aad22356df113e0a4fdac7
+区块：2671968；gasUsed：70243；成功。
+哈希由截图转录，正式填写前请在浏览器核对区块、参数0和转入30个代币，并复制原文。
+
+5. HHT dispute(1) 发起争议
+0xd7c69e64b52b3a121a78f6622822ce1c7a980df8f5aab5adb515c228fd140e02
+区块：2688558；gasUsed：36385；成功。
+
+6. 后端 resolve(1,false) 仲裁退款
+0xf6b1548cf797cf2b996a7e68ef1055ea79b21e11594242ee5c87e89c6c85528c
+区块：2688713；gasUsed：62909；成功，订单1为Refunded，30个代币退回买家。
+
+7. 买家 confirm(0) 确认收货
+0x558af78d8ae4466c03933525313078824e3d7dd929b92edd80a8b4b4ef57299b
+区块：2688869；gasUsed：62541；成功，订单0为Completed，30个代币付给HHT。
+哈希由截图转录，正式填写前请在浏览器核对区块、发起人和参数0，并复制原文。
+
+8. 后端 resolve(0,true) 失败测试
+0x44ceeb6f1287e1ca414da1b6cc3f7048c44aa25b6397f1e4cfd53a5791d3493c
+区块：2688659；gasUsed：25884；链上status=0x0，接口HTTP422。
+当时订单0仍为Paid。失败回执未返回明确revert reason，报告应结合状态和源码解释，不编造错误原文。
+
+附录补充两笔（不替代上面的正式八行）
+
+9. 买家 createOrder 订单1
+0x9b37b9c2dc7b150ed98a64882bef3b703326f1ffa618fec02bdf9987bf5132cb
+区块：2671952
+
+10. 买家 deposit(1) 付款30个代币
+0xf42fe65d6ed76d2011fa2d7cadbe9fdaf93965b91ce823c16cd327e94a495009
+区块：2671969；gasUsed：70243；成功。完整哈希由组长复制提供。
+
+公共地址
+买家：0x434F295aeBf8948170Cd8f180CDCD99BF4Fba66A
+HHT卖家：0x97810ea00F6Fa7de74ca2Abc71ccDb62C68FEcA0
+后端仲裁账户：0xd41B05DCE1C1Ac4A7fC1DC4C792fD799cf140D12
+本轮Escrow：0x3d52d4F4F35AE4afaC0b23AFA73621F8D052BAF3
+CxlToken：0x5FB9538A8B7b2087a7E556622e45A07425F3a401

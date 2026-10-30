@@ -1,0 +1,6 @@
+HTTP/1.1 422 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Mon, 26 Oct 2026 06:43:41 GMT
+
+{"exception":"TransactionException","message":"Transaction 0x44ceeb6f1287e1ca414da1b6cc3f7048c44aa25b6397f1e4cfd53a5791d3493c has failed with status: 0x0. Gas used: 25884. Revert reason: ''.","transactionHash":"0x44ceeb6f1287e1ca414da1b6cc3f7048c44aa25b6397f1e4cfd53a5791d3493c","status":"0x0","blockNumber":"2688659","gasUsed":"25884"}

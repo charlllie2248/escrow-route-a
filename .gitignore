@@ -1,0 +1,13 @@
+.gradle/
+build/
+.idea/
+.vscode/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*keystore*
+*.log
+*.backup
+*.save
